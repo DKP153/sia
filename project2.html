@@ -1,18 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>DPd Shopping</title>
+
 <script src="auth.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: url("https://images.unsplash.com/photo-1606813909230-ec8b2c2ec0c3") no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.7);
+    min-height:100vh;
+}
+
+/* Navbar */
+.navbar{
+    background: rgba(0,0,0,0.6);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px black;
+}
+
+.navbar h2{
+    color:#00e5ff;
+    margin:0;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.navbar a:hover{
+    color:#00e5ff;
+}
+
+/* Products */
+.shop{
+    padding:50px;
+}
+
+.title{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.product{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+    transition:0.4s;
+    text-align:center;
+}
+
+.product:hover{
+    transform: translateY(-10px);
+    box-shadow:0 0 30px #00e5ff;
+}
+
+.product img{
+    width:120px;
+    margin-bottom:15px;
+}
+
+.product h3{
+    color:#00e5ff;
+}
+
+.product p{
+    font-size:14px;
+    opacity:0.8;
+}
+
+.product button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background: linear-gradient(90deg,#00c6ff,#0072ff);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.product button:hover{
+    transform: scale(1.1);
+}
+</style>
 </head>
 
 <body onload="checkLogin()">
+<div class="overlay">
 
-<h2>Project 2 – Shopping</h2>
+<!-- Navbar -->
+<div class="navbar">
+    <h2>DPd Shopping</h2>
+    <div>
+        <a href="project1.html">Dashboard</a>
+        <a href="project3.html">Reports</a>
+        <a href="logout.html">Logout</a>
+    </div>
+</div>
 
-<p>Buy products here</p>
+<!-- Shop -->
+<div class="shop">
+    <div class="title">Available Products</div>
 
-<a href="project1.html">Dashboard</a> |
-<a href="project3.html">Reports</a> |
-<a href="logout.html">Logout</a>
+    <div class="products">
 
+        <div class="product">
+            <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png">
+            <h3>Laptop</h3>
+            <p>High performance business laptop</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png">
+            <h3>Mobile</h3>
+            <p>Latest smartphone with powerful camera</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png">
+            <h3>Headphones</h3>
+            <p>Noise cancelling premium audio</p>
+            <button>Add to Cart</button>
+        </div>
+
+    </div>
+</div>
+
+</div>
 </body>
 </html>
+

@@ -1,19 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>DPd Dashboard</title>
+
 <script src="auth.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: url("https://images.unsplash.com/photo-1531297484001-80022131f5a1") no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+/* Overlay */
+.overlay{
+    background: rgba(0,0,0,0.65);
+    min-height:100vh;
+}
+
+/* Navbar */
+.navbar{
+    background: rgba(0,0,0,0.6);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px black;
+}
+
+.navbar h2{
+    margin:0;
+    color:#00e5ff;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.navbar a:hover{
+    color:#00e5ff;
+}
+
+/* Dashboard */
+.dashboard{
+    padding:60px;
+}
+
+.welcome{
+    font-size:26px;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+    transition:0.4s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow:0 0 30px #00e5ff;
+}
+
+.card img{
+    width:60px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin:0;
+    color:#00e5ff;
+}
+
+.card p{
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
 </head>
 
 <body onload="checkLogin()">
+<div class="overlay">
 
-<h2>Project 1 – Dashboard</h2>
-Welcome <b><script>document.write(localStorage.getItem("username"))</script></b>
+<!-- Navbar -->
+<div class="navbar">
+    <h2>DPd Web Suite</h2>
+    <div>
+        Welcome <b><script>document.write(localStorage.getItem("username"))</script></b>
+        <a href="logout.html">Logout</a>
+    </div>
+</div>
 
-<hr>
+<!-- Dashboard -->
+<div class="dashboard">
+    <div class="welcome">Dashboard Overview</div>
 
-<a href="project2.html">Go to Project 2</a><br>
-<a href="project3.html">Go to Project 3</a><br>
-<a href="logout.html">Logout</a>
+    <div class="cards">
 
+        <div class="card" onclick="location.href='project2.html'">
+            <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png">
+            <h3>Shopping</h3>
+            <p>Manage products, orders and cart</p>
+        </div>
+
+        <div class="card" onclick="location.href='project3.html'">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+            <h3>Reports</h3>
+            <p>View analytics and user activity</p>
+        </div>
+
+        <div class="card" onclick="location.href='logout.html'">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png">
+            <h3>Logout</h3>
+            <p>Securely exit the system</p>
+        </div>
+
+    </div>
+</div>
+
+</div>
 </body>
 </html>

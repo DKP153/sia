@@ -1,18 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>DPd Reports</title>
+
 <script src="auth.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: url("https://images.unsplash.com/photo-1545235617-9465d2a55698") no-repeat center center/cover;
+    min-height:100vh;
+    color:white;
+}
+
+.overlay{
+    background: rgba(0,0,0,0.75);
+    min-height:100vh;
+}
+
+/* Navbar */
+.navbar{
+    background: rgba(0,0,0,0.6);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 15px black;
+}
+
+.navbar h2{
+    color:#00e5ff;
+    margin:0;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.navbar a:hover{
+    color:#00e5ff;
+}
+
+/* Reports */
+.reports{
+    padding:50px;
+}
+
+.title{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 0 25px rgba(0,0,0,0.6);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow:0 0 30px #00e5ff;
+}
+
+.card img{
+    width:60px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#00e5ff;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
 </head>
 
 <body onload="checkLogin()">
+<div class="overlay">
 
-<h2>Project 3 – Reports</h2>
+<!-- Navbar -->
+<div class="navbar">
+    <h2>DPd Reports</h2>
+    <div>
+        <a href="project1.html">Dashboard</a>
+        <a href="project2.html">Shopping</a>
+        <a href="logout.html">Logout</a>
+    </div>
+</div>
 
-<p>View reports here</p>
+<!-- Reports -->
+<div class="reports">
+    <div class="title">System Analytics</div>
 
-<a href="project1.html">Dashboard</a> |
-<a href="project2.html">Shopping</a> |
-<a href="logout.html">Logout</a>
+    <div class="cards">
 
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+            <h3>Sales Report</h3>
+            <p>Total sales, revenue and daily transactions</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+            <h3>User Activity</h3>
+            <p>Login history and customer behavior</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png">
+            <h3>Inventory</h3>
+            <p>Stock levels and product availability</p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png">
+            <h3>Performance</h3>
+            <p>System uptime and application health</p>
+        </div>
+
+    </div>
+</div>
+
+</div>
 </body>
 </html>
